@@ -20,7 +20,8 @@ class InstallMermaidCLI(Command):
 
 here = Path(__file__).resolve().parent
 long_description = (here / "README.md").read_text(encoding="utf-8")
-requirements = (here / "requirements.txt").read_text(encoding="utf-8").splitlines()
+raw_reqs = (here / "requirements.txt").read_text(encoding="utf-8").splitlines()
+requirements = [line for line in raw_reqs if line and not line.startswith(("-", "#", "git+", "http"))]
 
 
 extras_require = {

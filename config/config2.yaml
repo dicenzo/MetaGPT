@@ -2,7 +2,38 @@
 # Reflected Code: https://github.com/geekan/MetaGPT/blob/main/metagpt/config2.py
 # Config Docs: https://docs.deepwisdom.ai/main/en/guide/get_started/configuration.html
 llm:
-  api_type: "openai"  # or azure / ollama / groq etc.
-  model: "gpt-4-turbo"  # or gpt-3.5-turbo
-  base_url: "https://api.openai.com/v1"  # or forward url / other llm url
-  api_key: "YOUR_API_KEY"
+  api_key: ${GROQ_API_KEY}
+  model: Mixtral-8x7B-Instruct-v0.1
+  base_url: https://api.groq.com/openai/v1
+
+workspace: ../output
+code_path: ../recipecraft-ai
+requirement_path: ../recipecraft-ai/requirements.txt
+
+team: # team is a list of team members
+  - role: "ProductManager"
+    name: "Alice"
+    goal: "As a product manager, your goal is to define the product vision and requirements."
+    backstory: "You are a product manager with 10 years of experience in the food industry. You have a deep understanding of the food industry and the needs of the customers."
+    skills: "You are a product manager with 10 years of experience in the food industry. You have a deep understanding of the food industry and the needs of the customers."
+    goals: "You are a product manager with 10 years of experience in the food industry. You have a deep understanding of the food industry and the needs of the customers."
+    constraints: "You are a product manager with 10 years of experience in the food industry. You have a deep understanding of the food industry and the needs of the customers."
+    resources: "You are a product manager with 10 years of experience in the food industry. You have a deep understanding of the food industry and the needs of the customers."
+    preferences: "You are a product manager with 10 years of experience in the food industry. You have a deep understanding of the food industry and the needs of the customers."
+    tools: "You are a product manager with 10 years of experience in the food industry. You have a deep understanding of the food industry and the needs of the customers."
+  - role: "Architect"
+    name: "Bob"
+    goal: "As an architect, your goal is to design the product architecture and infrastructure."
+  - role: "Engineer"
+    name: "Charlie"
+    goal: "As an engineer, your goal is to implement the product features and functionality."
+  - role: "CodeReviewer"
+    name: "Dana"
+    goal: "As a code reviewer, your goal is to review the code and provide feedback."
+
+
+
+
+
+
+  - role: "CodeReviewer"
